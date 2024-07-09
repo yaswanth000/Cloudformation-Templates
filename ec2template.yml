@@ -13,9 +13,9 @@ Parameters:
       i3.xlarge, i3.2xlarge, i3.4xlarge, i3.8xlarge,
       d2.xlarge, d2.2xlarge, d2.4xlarge, d2.8xlarge]
     ConstraintDescription: must be a valid EC2 instance type.
-  #MyVPC:
-    #Type: String
-    # Default: "vpc-09a5f812ef5324807" # Specify your desired VPC ID here
+  MyVPC:
+    Type: String
+    Default: "vpc-09a5f812ef5324807" # Specify your desired VPC ID here
   ImageId:
     Type: String
     Default: "ami-051f8a213df8bc089" # Specify your desired AMI ID here
@@ -23,7 +23,7 @@ Resources:
   Ec2KeyPair:
     Type: 'AWS::EC2::KeyPair'
     Properties:
-      KeyName: MyKeyPair
+      KeyName: MyKeyPairec2
   InstanceSecurityGroup:
     Type: AWS::EC2::SecurityGroup
     Properties:
@@ -42,7 +42,7 @@ Resources:
           FromPort: 80
           ToPort: 80
           CidrIp: 0.0.0.0/0
-      #VpcId: !Ref MyVPC
+      VpcId: !Ref MyVPC
   MyEC2Instance:
     Type: AWS::EC2::Instance
     Properties: 
