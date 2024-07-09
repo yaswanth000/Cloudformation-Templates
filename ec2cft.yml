@@ -3,10 +3,10 @@ Description: Creating EC2 Instance with security group by enabling port 80 and 2
 Parameters:
   AvailabilityZone:
     Type: String
-    Default: us-east-1
+    Default: us-east-1a
     AllowedValues:
       - us-west-1
-      - us-east-1
+      - us-east-1a
       - ap-southeast-1a
     Description: Enter availabilityzone
   InstanceType:
