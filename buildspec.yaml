@@ -9,8 +9,8 @@ phases:
       - echo Build started on `date`
       - pwd
       - ls -ltrh
-      - aws cloudformation validate-template --template-body file://ec2template.yml
-      - aws cloudformation create-stack --stack-name ec2codebuildstack --template-body file://ec2template.yml
+      - aws cloudformation validate-template --template-body file://ec2cft.yml
+      - aws cloudformation create-stack --stack-name ec2codebuildstack --template-body file://ec2cft.yml
       #- aws cloudformation create-change-set --stack-name codebuildstackchangeset --change-set-name ec2changeset --template-body file://ec2cft.yml --ParameterKey=InstanceType,ParameterValue=t2.micro
       #- aws cloudformation deploy --stack-name codebuildstack --template-file ec2cft.yml  --parameter-overrides InstanceType=t2.micro
       #- aws codepipeline start-pipeline-execution --name codepipelinecft
